@@ -1,5 +1,5 @@
 let token = localStorage.getItem('token')
-if (token != undefined || token.trim() != '') {
+if (token != null) {
     window.location.href = 'http://localhost:5500/userpageRender'
 }
 async function makeRegister() {
