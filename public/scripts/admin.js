@@ -3,7 +3,7 @@ var analiseData = false
 let token = localStorage.getItem('token')
 
 if (token == null) {
-    window.location.href = 'http://localhost:5500/login'
+    window.location.href = '/login'
 }
 
 function deleteTag(event) {
@@ -80,7 +80,7 @@ function checkUser() {
 
             if (obj.status == 'error') {
                 document.querySelector('.loadingContainer').style.display = 'none'
-                window.location.href = 'http://localhost:5500/login'
+                window.location.href = '/login'
                 localStorage.removeItem('token')
                 console.log(obj)
             } else if (obj.status == 'sucess') {
@@ -103,7 +103,7 @@ function postTag() {
     let token = localStorage.getItem('token')
 
     if (token == undefined || token.trim() == '') {
-        return window.location.href = 'http://localhost:5500/login'
+        return window.location.href = '/login'
     }
 
     let headers = new FormData()
