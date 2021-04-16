@@ -8,4 +8,4 @@ var knex = require('knex')({
     }
 });
 
-module.exports = db
+module.exports = knex
