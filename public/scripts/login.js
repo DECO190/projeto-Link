@@ -1,6 +1,6 @@
 let token = localStorage.getItem('token')
 if (token != null || token != undefined) {
-    window.location.href = 'http://localhost:5500/userpageRender'
+    window.location.href = '/userpageRender'
 }
 
 async function makeLogin() {
