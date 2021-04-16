@@ -181,9 +181,10 @@ module.exports = {
         }
 
         let tags = await db('links').select('tags').where({username: req.username})
-
+        let user = await db('user').select({image: 'image', name: 'name'}).where({username: req.username})
+        console.log(user)
         if (tags[0] != undefined) {
-            return res.json({ status: 'sucess', data: tags[0].tags, username: req.username})
+            return res.json({ status: 'sucess', data: tags[0].tags, username: req.username, image: user[0].image, name: user[0].name})
         }
     },
 
@@ -302,8 +303,24 @@ module.exports = {
             if (error) throw new Error(error);
 
             await db('user').update({ image: link }).where({username: username})
-
             return res.json({ status: 'sucess', message: 'Imagem alterada com sucesso!', link: link})
         });
+    },
+
+    async changeUsername(req, res) {
+        let checkUsername = await db('user').select('*').where({username: req.body.username})
+        if (checkUsername[0] != undefined) {
+            return res.json({ status: 'error', message: 'Nome de usuario indisponivel :('})
+        }
+
+        await db('user').update({username: req.body.username}).where({username: req.username})
+        await db('links').update({username: req.body.username}).where({username: req.username})
+        await db('analise').update({username: req.body.username}).where({username: req.username})
+
+        const token = jwt.sign({ username: req.body.username}, config.secret, {
+            expiresIn: 86400
+        })
+
+        return res.json({status: 'sucess', message: 'Nome de usuario alterado :)', token: token})
     }
 } 
