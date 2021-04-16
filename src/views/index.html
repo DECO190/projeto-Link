@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&family=Waiting+for+the+Sunrise&display=swap" rel="stylesheet">
+
+    <style>
+        .ct-chart {
+            font-family: 'Sen', sans-serif;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="ct-chart ct-perfect-fourth"></div>
+    <script>
+        var data = {
+            labels: ['W1', 'W2', 'W3', 'W4', 'W5', 'W6', 'W7', 'W8', 'W9', 'W10'],
+            series: [
+                [1, 2, 4, 8, 6, -2, -1, -4, -6, -2]
+            ]
+        };
+
+        var options = {
+            high: 10,
+            low: -10,
+            axisX: {
+                labelInterpolationFnc: function(value, index) {
+                    return index % 2 === 0 ? value : null;
+                }
+            } 
+        };
+
+        new Chartist.Bar('.ct-chart', data, options);
+    </script>
+
+    
+</body>
+</html>

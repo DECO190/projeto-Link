@@ -1,0 +1,89 @@
+@keyframes moveAppear {
+    from { 
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+.appear {
+    animation-name: moveAppear;
+    animation-duration: 1000ms;
+    animation-fill-mode: backwards; 
+}
+
+
+@keyframes moveDisappear {
+    from { 
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}
+
+.disappear {
+    animation-name: moveDisappear;
+    animation-duration: 1000ms;
+    animation-fill-mode: backwards; 
+}
+
+
+@keyframes width{
+    from { 
+        width: 0%; 
+    }
+
+    to {
+        width: 100%; 
+    }
+}
+
+.width {
+    animation-name: width;
+    animation-duration: 5s;
+    animation-fill-mode: backwards; 
+    animation-delay: 900ms;
+}
+
+
+@keyframes fade{
+    from { 
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1; 
+    }
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 600ms;
+    animation-fill-mode: backwards; 
+}
+
+.activeMenu {
+    animation-name: fade;
+    animation-duration: 600ms;
+    animation-fill-mode: backwards; 
+}
+
+@keyframes disfade{
+    from { 
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0; 
+    }
+}
+
+.disfade {
+    animation-name: disfade;
+    animation-duration: 600ms;
+    animation-fill-mode: backwards; 
+}

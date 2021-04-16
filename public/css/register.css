@@ -1,0 +1,344 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    min-height: 380.594px;
+    background-color: #17191C;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.all-container {
+    margin-top: 20px;
+    height: 90%;
+    max-height: 900px;
+    min-height: 380.594px;
+    width: 95%;
+    background-color: #1C1E21;
+    border-radius: 13px;
+    box-shadow: 0px 4px 23px 1px rgba(0, 0, 0, 0.2);
+    max-width: 1500px;
+    display: flex;
+}
+ 
+/* ================================================================ */
+
+.sand-aside {
+    height: 100%;
+    width: 45%;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sand-img {
+    height: 100%; 
+    width: 100%; 
+    background-image: url('/images/sand.png'); 
+    background-size: cover; 
+    background-position: center; 
+    border-radius: 13px; 
+    display: flex;
+    flex-direction: column
+    
+}
+
+
+.logoMain {
+    font-family: 'Sen', sans-serif;
+    color: white;
+    margin: 15px;
+    flex-grow: 1;
+}
+
+.phraseMain {
+    font-family: 'Waiting for the Sunrise', sans-serif;
+    color: white;
+    flex-grow: 1;
+    width: 95%;
+    font-size: 50px;
+    padding: 10px;
+    align-self: center;
+    text-align: center;
+}
+
+
+.footer-menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.footer-menu a {
+    font-family: 'Sen', sans-serif;
+    color: white;
+    text-decoration: none;
+}
+
+/* ===================================================== */
+
+.user-aside {
+    width: 55%;
+    height: 100%;   
+    min-height: 380px;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.user-container {
+    width: 100%; 
+    height: 100%;
+    min-height: 380px;
+    font-family: 'Sen', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    overflow-y: scroll;
+}
+
+.title-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+}
+
+.title1 {
+    color: white;
+    font-size: 25px;
+    width: 80%;
+}
+
+.title2 {
+    margin-top: 10px;
+    color: #C4C4C4;
+    font-size: 16px;
+    width: 80%;
+}
+
+.input-container {
+    margin-top: 30px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-unit {
+    height: 45px;
+    border: solid 2px #3F3F3F;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    width: 70%;
+    transition: 500ms;
+    
+}
+
+.input-unit + .input-unit  {
+    margin-top: 20px;
+}
+
+.input-unit img {
+    height: 25px;
+    margin: 8px 0px 8px 8px;
+}
+
+.input-unit input {
+    font-family: 'Sen', sans-serif;
+    height: calc(100% - 20px);
+    width: 100%;
+    border-radius: 11px;
+    outline: none;
+    border: none;
+    padding: 10px;
+    background-color: transparent;
+    font-size: 16px;
+    color: #C4C4C4;
+}
+
+.input-unit:focus-within {
+    background-color: #25272A;
+    border: solid 2px #364182;
+}
+
+/* ======================================================== */
+
+.input-upload-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.input-upload-container p {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.overinput {
+    width: 80px;
+    height: 80px;
+    border-radius: 13px;
+    background-color: #17d17a;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: solid 2px #17d17a;
+    cursor: pointer;
+}
+
+.overinput img {
+    height: 40px;
+    
+
+}
+
+.image-input {
+    height: 87px;
+    width: 82px;
+    border: solid 2px red;
+    outline: none;
+    border-radius: 13px;
+    position: absolute;
+    /* margin-top: 33px; */
+    /* opacity: 0%; */
+    cursor: pointer;
+}
+
+.submit-bttn {
+    width: 70%;
+    margin-top: 35px;
+    height: 60px;
+    border-radius: 13px;
+    outline: none;
+    border: none;
+    font-family: 'Sens', sans-serif;
+    background-color: #5268F4;
+    border: solid 2px #5268F4; 
+    color: white;
+    font-family: 'Sen', sans-serif;
+    font-size: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
+
+.submit-bttn img {
+    height: 40px;
+}
+
+/* =================================================================== */
+
+.alertBox-container {
+    height: 200px;
+    width: 100vw;
+    position: fixed;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    align-self: flex-start;
+}
+
+.alertBox-container > main {
+    background-color: #25272A;
+    height: 90px;
+    width: 400px;
+    box-shadow: 0px 4px 23px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 10px 0px 0px 0px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.alertBox-container > main > p {
+    color: white;
+    font-family: 'Sen';
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.alertBox-container > main > img {
+    height: 50px;
+    margin-left: 20px;
+}
+
+.countLine-container {
+    background-color: #25272A;
+    width: 400px;
+    height: 5px;
+    border-radius: 0px 0px 0px 10px;
+    overflow: hidden;
+}
+
+.countLine {
+    width: 400px;
+    height: 5px;
+    background-color: rgb(233, 61, 61);
+    border-radius: 1000px;
+    justify-self: flex-start;
+}
+
+@media (max-width: 768px) {
+    body {
+        min-height:  1500px !important;
+        align-items: flex-start;
+    }
+
+    .input-unit {
+        width: 100%;
+    }
+
+    .all-container {
+        flex-direction: column;
+        height: 90%;
+        min-height: 1200px;
+    }
+     
+    .sand-aside {
+        height: 30%;
+        width: 100%;
+        min-height: 400px;
+        border-radius: 13px;
+    }
+
+    .user-aside {
+        width: 100%;
+
+        height: 800px;   
+        border-radius: 13px;
+        padding: 10px;
+    }
+    
+    
+}
+
+@media (max-height: 584px) {
+    .user-container {
+        justify-content: flex-start;
+    }
+}
