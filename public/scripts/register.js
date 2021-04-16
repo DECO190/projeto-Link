@@ -1,6 +1,6 @@
 let token = localStorage.getItem('token')
 if (token != null) {
-    window.location.href = 'http://localhost:5500/userpageRender'
+    window.location.href = '/userpageRender'
 }
 async function makeRegister() {
 
@@ -54,7 +54,7 @@ async function makeRegister() {
                 localStorage.setItem('token', obj.token)
 
                 setTimeout(() => {
-                    window.location.href = 'http://localhost:5500/userpageRender'
+                    window.location.href = '/userpageRender'
                 }, 4000)
             }
 
