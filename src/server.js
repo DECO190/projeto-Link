@@ -65,6 +65,7 @@ app.get('/getTags/:username', pages.getTags)
 app.patch('/countClient/:username', pages.countClient)
 app.patch('/changePass', checkToken, pages.changePass)
 app.patch('/changeImage', checkToken, upload.single('img'), pages.changeImage)
+app.patch('/changeUsername', checkToken, pages.changeUsername)
 // ========================================= 
 
 server.listen(process.env.PORT)
