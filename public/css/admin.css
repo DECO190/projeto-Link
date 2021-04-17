@@ -118,6 +118,7 @@ body {
     justify-content: space-between;
     border-bottom: solid 2px rgba(136, 136, 136, 0.198);
     border-radius: 2px;
+    min-height: 70px;
 }
 .content-container > header > P {
     color: white;
@@ -389,48 +390,64 @@ body {
 /* ============================================== */
 
 .perfil {
-    height: 95%;
     min-height: 1000px;
+    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-top: 20px;
-    overflow-y: scroll;
 }
 
-.perfil h1{
-    color: white;
-    font-family: 'Sen', sans-serif;
-    
+.userImage {
+    width: 80px;
+    height: 80px;
+    background-image: url('/images/joca.jpg');
+    background-position: center;
+    background-size: cover;
+    border-radius: 1000px;
+    margin-top: 20px;
+    box-shadow: 0px 4px 23px 1px rgba(0, 0, 0, 0.2);
+    border: solid 2px #4555ad86;
 }
+
+.usernameTitle {
+    color: rgb(209, 209, 209);
+    font-family: 'Sen', sans-serif;
+    font-size: 21px;
+    margin-top: 5px;
+    font-weight: 700;
+}
+
+.userRealname {
+    color: rgba(161, 161, 161, 0.52);
+    font-family: 'Sen', sans-serif;
+    margin-top: 5px;
+}
+
+/* ===================================================== */
 
 .horLine {
-    height: 1px;
+    height: 2px;
     width: 50%;
-    background-color: rgba(141, 141, 141, 0.445);
+    background-color: rgba(104, 104, 104, 0.034);
     margin-top: 10px;
 }
 
 
+/* ============================================================= */
 
 .input-unit {
-    width: 80%;
-    height: 65px;
+    height: 50px;
     display: flex;
     align-items: center;
+    margin-top: 20px;
+    width: 100%;
     justify-content: center;
-    margin-top: 10px;
-}
-
-.input-unit img {
-    height: 25px;
-    margin-right: 10px;
 }
 
 .input-unit input {
     font-family: 'Sen', sans-serif;
-    height: calc(100% - 20px);
-    width: 80%;
+    width: 50%;
     border-radius: 11px 0px 0px 11px;
     outline: none;
     border: none;
@@ -441,11 +458,16 @@ body {
     transition: 500ms;
     border: solid 2px #3F3F3F;
     box-sizing: border-box;
-    height: 45px;
+    height: 40px;
+}
+
+.input-unit img {
+    height: 30px;
+    margin-right: 10px;
 }
 
 .input-unit button {
-    height: 45px;
+    height: 40px;
     width: 60px;
     border-radius: 0px 11px 11px 0px;
     outline: none;
@@ -458,67 +480,75 @@ body {
     transition: background-color 500ms;
 }
 
-.input-unit button:hover {
-    background-color: #18a181;
-}
 
-.input-unit input:focus {
-    background-color: #25272A;
-    border: solid 2px #364182;
-}
+/* ========================================================= */
 
 .changeImgInput {
-    width: 80%;
-    height: 65px;
     display: flex;
-    align-items: center;
-    justify-content: center;
     margin-top: 10px;
 }
 
-.changeImgInput button {
-    height: 45px;
-    width: 40%;
-    max-width: 100px;
-    border-radius: 11px;
-    outline: none;
-    background-color: #50C8AB;
-    cursor: pointer;
-    color: white;
-    font-family: 'Sen', sans-serif;
-    border: none;
-    outline: none;
-    transition: background-color 500ms;
+.changeImgInput label img {
+    height: 40px;
+}
+
+.changeImgInput label {
+    background-color: #191C1F;
+    width: 150px;
+    height: 55px;
+    border: solid 1.5px #5268F4;
+    display: inline-block;
     display: flex;
     align-items: center;
-    justify-content: center;
-}
-
-.changeImgInput img {
-    height: 50px;
+    border-radius: 10px;
     cursor: pointer;
-    margin-right: 20px;
+    margin-right: 10px;
+    padding: 10px;
 }
 
-/* ========================================= */
+.changeImgInput p {
+    color: white;
+    font-family: 'Sen', sans-serif;
+    margin: 0px 20px;
+}
+
+.changeImgBttn {
+    border-radius: 10px;
+    width: 100px;
+    color: white;
+    font-family: 'Sen', sans-serif;
+    background-color: #50C8AB;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 500ms;
+}
+
+.changeImgBttn:hover {
+    background-color: #34b496;
+}
+
+/* =========================================================== */
 
 .copyContainer {
     width: 100%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.copyInput {
+    display: flex;
+    width: 100%;
+    display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
-    flex-direction: column;
 }
 
-.pasteIcon {
-    height: 25px;
-}
-
-.copyContainer input {
+.copyInput input {
     font-family: 'Sen', sans-serif;
-    height: calc(100% - 20px);
-    width: 50%;
+    width: 60%;
     border-radius: 11px 0px 0px 11px;
     outline: none;
     border: none;
@@ -529,53 +559,59 @@ body {
     transition: 500ms;
     border: solid 2px #3F3F3F;
     box-sizing: border-box;
-    height: 45px;
+    height: 40px;
 }
 
-.copyContainer button {
-    height: 45px;
-    width: 10%;
-    border-radius: 0px 11px 11px 0px;
-    outline: none;
-    background-color: #50C8AB;
-    cursor: pointer;
-    color: white;
-    font-family: 'Sen', sans-serif;
-    border: none;
-    outline: none;
-    transition: background-color 500ms;
-}
-
-.copyContainer button:hover {
-    background-color: #18a181;
-}
-
-.copyInputs {
+.dataCopy {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 60px;
+    background-color: #50C8AB;
+    height: 40px;
+    border-radius: 0px 10px 10px 0px;
+    cursor: pointer;
 }
 
-
+.dataCopy img {
+    height: 30px;
+}
 
 .qr-container {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     height: 300px;
-    width: 100%;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: rgba(185, 185, 185, 0.041);
 }
 
-.qr-container p {
+.extraLine {
+    margin-top: 20px !important;
+}
+
+.logOutContainer {
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.logOutContainer img {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.logOutContainer p {
     font-family: 'Sen', sans-serif;
-    color: white;
+    color: #CD4638;
+    font-size: 18px;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
-#qrcode {
-  margin-top:15px;
-}
 @media (max-width: 768px) {
     body {
         align-items: flex-start;
