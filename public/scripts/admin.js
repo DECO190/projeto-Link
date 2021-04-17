@@ -123,6 +123,7 @@ function renderAdmin() {
 }
 
 function checkUser() {
+    document.querySelector('.loadingContainer').style.display = 'flex'
     let token = localStorage.getItem('token')
 
     let headers = new FormData()
@@ -133,9 +134,9 @@ function checkUser() {
         headers: headers
     }
 
-    document.querySelector('.loadingContainer').style.display = 'none'
     fetch('/checkUser', options)
-        .then(async (response) => {
+    .then(async (response) => {
+            document.querySelector('.loadingContainer').style.display = 'none'
             let obj = await response.json();
 
             if (obj.status == 'error') {
