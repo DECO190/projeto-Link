@@ -6,6 +6,8 @@ if (token == null) {
     window.location.href = '/login'
 }
 
+var user;
+
 function deleteTag(event) {
     let token = localStorage.getItem('token')
     
@@ -62,6 +64,64 @@ function renderTags(data) {
     
 }
 
+function renderAdmin() {
+    console.log(user)
+    let container = document.querySelector('.perfil')
+
+    container.innerHTML = `
+    <div class = 'userImage'></div>
+    <p class = 'usernameTitle'>@${user.username}</p>
+    <p class = 'userRealname'>${user.name}</p>
+    <div class = 'horLine'></div>
+
+    <div class = 'input-unit'>
+        <img src="images/undefinedUserImg.svg">
+        <input type="text" placeholder="Mudar username..." id = 'username'  autocomplete="off">
+        <button onclick="changeUsername()">Alterar</button>
+    </div>
+
+    <div class = 'input-unit'>
+        <img src="images/padlock.svg">
+        <input type="text" placeholder="Mudar senha..." id = 'password'  autocomplete="off">
+        <button onclick="changePass()">Alterar</button>
+    </div>
+    
+    
+    <div class = 'changeImgInput'>
+        <input type="file"  id="image" hidden>
+        <label for="image">
+            <img src="images/upload.svg" alt="">
+            <p>Imagem</p>
+        </label>
+        <button class = 'changeImgBttn' onclick="changeImage()">Alterar foto</button>
+    </div>
+    <div class = 'horLine extraLine'></div>
+    <div class = 'copyContainer'>
+        <div class = 'copyInput'>
+            <input type="text" readonly="readonly" value = 'https://projetolink.herokuapp.com/user/${user.username}' id = 'userLink'  autocomplete="off">
+            <div onclick= "copyLink()" class = 'dataCopy'>
+                <img class = 'pasteIcon' src="images/paste.svg" alt="">
+            </div>
+        </div>
+        <div class = 'qr-container'>
+            <div id="qrcode"></div>
+        </div>
+    </div>
+
+    <div class = 'logOutContainer'>
+        <img onclick = 'logOut()' src="images/logout.svg" alt="">
+        <p onclick = 'logOut()'>Finalizar Sessão</p>
+    </div>
+
+    ` 
+
+    let image = document.querySelector('.userImage')
+    image.style.backgroundImage = `url(${user.image})`
+
+    let qrcode = new QRCode("qrcode");
+    qrcode.makeCode(`https://projetolink.herokuapp.com/user/${user.username}`);
+}
+
 function checkUser() {
     let token = localStorage.getItem('token')
 
@@ -90,10 +150,9 @@ function checkUser() {
                 
                 renderTags(obj.data)
                 
-                document.querySelector('#userLink').value = `https://projetolink.herokuapp.com/user/${obj.username}`
+                user = obj
 
-                var qrcode = new QRCode("qrcode");
-                qrcode.makeCode(`https://projetolink.herokuapp.com/user/${obj.username}`);
+                renderAdmin()
             }
 
         })
@@ -341,8 +400,9 @@ function changeImage() {
     let image = document.querySelector('#image');
 
     if (image.files[0] == '' || image.files[0] == undefined) {
-        alertBox('Imagem não selecionada!', 'images/cancel.svg', 'rgb(233, 61, 61)')
-        return 
+        document.querySelector('.loadingContainer').style.display = 'none'
+        return alertBox('Imagem não selecionada!', 'images/cancel.svg', 'rgb(233, 61, 61)')
+         
     }   
 
     let headers = new FormData()
@@ -359,11 +419,14 @@ function changeImage() {
 
     fetch('/changeImage', options)
         .then(async response => {
+            document.querySelector('.loadingContainer').style.display = 'none'
             let obj = await response.json()
             document.querySelector('.loadingContainer').style.display = 'none'
             if (obj.status == 'error') {
                 alertBox(obj.message, 'images/cancel.svg', 'rgb(233, 61, 61)')
             } else if (obj.status == 'sucess') {
+                user.image = obj.link
+                renderAdmin()
                 alertBox(obj.message, 'images/checked.svg', 'rgb(3, 217, 140)')
             }
         })
@@ -375,4 +438,54 @@ function copyLink() {
     a.select();
     a.setSelectionRange(0, 99999); 
     document.execCommand("copy");
+}
+
+function changeUsername() {
+    document.querySelector('.loadingContainer').style.display = 'flex'
+    let token = localStorage.getItem('token')
+
+    if (token == undefined || token.trim() == '') {
+        return window.location.href = '/login'
+    }
+
+    let username = document.querySelector('#username').value
+    
+    if (password == '' || password.length <= 6) {
+        alertBox('Senha inválida!', 'images/cancel.svg', 'rgb(233, 61, 61)')
+    }
+
+    let headers = new FormData()
+    headers.append('token', token)
+
+    let data = new URLSearchParams()
+    data.append('username', username)
+
+    let options = {
+        method: 'PATCH',
+        body: data,
+        headers: headers
+    }
+
+    fetch('/changeUsername', options)
+        .then(async response => {
+            document.querySelector('.loadingContainer').style.display = 'none'
+            let obj = await response.json()
+            if (obj.status == 'error') {
+                alertBox(obj.message, 'images/cancel.svg', 'rgb(233, 61, 61)')
+            } else if (obj.status == 'sucess') {
+                alertBox(obj.message, 'images/checked.svg', 'rgb(3, 217, 140)')
+
+                localStorage.removeItem('token')
+                localStorage.setItem('token', obj.token)
+
+                user.username = username
+
+                renderAdmin()
+            }
+        })
+}
+
+function logOut() {
+    localStorage.removeItem('token')
+    window.location.href = '/login'
 }
