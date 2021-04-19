@@ -45,7 +45,7 @@ app.post('/registerNewUser', upload.single('img'), pages.newUser)
 
 
 // ========================================= LOGIN
-app.get('/', pages.login)
+app.get('/', pages.index)
 app.get('/login', pages.login)
 app.post('/checkLogin', pages.checkLogin)
 // ========================================= 
