@@ -9,9 +9,8 @@
 body {
     display: flex;
     justify-content: center;
-    height: 100vh;
     width: 100vw;
-    min-height: 400px;
+    min-height: 600px;
 }
 
 .bgImg {
@@ -24,6 +23,7 @@ body {
     filter: blur(1.5px);
     min-height: 400px;
     background-repeat: no-repeat;
+    min-height: 600px;
 }
 
 .bgImg2 {
@@ -36,6 +36,7 @@ body {
     z-index: -10;
     min-height: 400px;
     background-repeat: no-repeat;
+    min-height: 600px;
 }
 
 /* =================================================== */
@@ -44,14 +45,16 @@ main {
     height: 100vh;
     width: 100vw;
     position: absolute;
+    justify-content: center;
     z-index: 10;
     display: flex;
     max-width: 1200px;
     overflow-x: hidden;
+    min-height: 600px;
 }
 
 .cellSide-container {
-    height: 700px;
+    height: 100%;
     width: 45%;
     display: flex;
     align-items: center;
@@ -61,22 +64,21 @@ main {
 }
 
 .cellSide-container img {
-    width: 50%;
-    max-height: 90%;
+    width: 287px;
+    height: 564px;
 }
 
 /* ===================================================== */
 
 .textSide-container {
     width: 55%;
-    height: 700px;
+    height: 100%;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     overflow-y: scroll;
-    min-height: 400px;
 }
 
 .textSide-container h1 {
@@ -150,36 +152,16 @@ main {
     .textSide-container {
         width: 100%;
         justify-content: baseline;
-        min-height: 800px;
+        min-height: 900px;
     }
-    
-    
-    .cellSide-container {
-        width: 100%;
-        min-height: 500px;
-    }
-    
-    .cellSide-container img {
-        width: 287px;
-        height: 560px;
-    }
-    
     
     .textSide-container p {
         width: 95%;
     }
-}
 
-/* @media (max-height: 650px) {
-    
-    .textSide-container {
-        justify-content: end;
-    }
-
-    
     .cellSide-container {
-        justify-content: baseline;
-
+        width: 100%;
+        min-height: 600px !important;
+        margin-top: 10px;
     }
-    
-} */
+}
