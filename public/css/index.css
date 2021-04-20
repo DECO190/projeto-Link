@@ -14,7 +14,7 @@ body {
 }
 
 .bgImg {
-    width: 100vw;
+    width: 101vw;
     height: 100vh;
     position: absolute;
     background-image: url('/images/sand.png');
@@ -23,11 +23,11 @@ body {
     filter: blur(1.5px);
     min-height: 400px;
     background-repeat: no-repeat;
-    min-height: 600px;
+    min-height: 700px;
 }
 
 .bgImg2 {
-    width: 100vw;
+    width: 101vw;
     height: 100vh;
     position: absolute;
     background-image: url('/images/sand.png');
@@ -36,7 +36,7 @@ body {
     z-index: -10;
     min-height: 400px;
     background-repeat: no-repeat;
-    min-height: 600px;
+    min-height: 700px;
 }
 
 /* =================================================== */
@@ -50,7 +50,7 @@ main {
     display: flex;
     max-width: 1200px;
     overflow-x: hidden;
-    min-height: 600px;
+    min-height: 700px;
 }
 
 .cellSide-container {
@@ -143,7 +143,7 @@ main {
     height: 65px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 750px) {
     main {
         flex-direction: column;
         justify-content: start;
