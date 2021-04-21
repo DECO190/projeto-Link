@@ -300,6 +300,11 @@ body {
 
 .unitText h1 {
     font-size: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 40vw;
+    max-width: 300px;
+    min-width: 100px;
 }
 
 .unitText p{
@@ -310,8 +315,8 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     width: 40vw;
-    max-width: 400px;
-    min-width: 200px;
+    max-width: 450px;
+    min-width: 100px;
 }
 
 .deletebttn {
@@ -622,6 +627,24 @@ body {
         height: 90%;
         min-height: 1200px;
     }
+
+    .ct-chart{
+        width: 95%;
+    }
      
 }
 
+
+@media (max-width: 450px) {
+    .tagIconAdmin {
+        display: none;
+    }
+
+    .vertLine2 {
+        display: none;
+    }
+
+    .unitText {
+        margin-left: 10px;
+    }
+}
