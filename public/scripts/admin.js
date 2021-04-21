@@ -50,13 +50,14 @@ function renderTags(data) {
         container.innerHTML += `
         <div class = 'tagUnit'>
             <div class = 'tagUnitPart1'>
-                <img src="${obj[i].icon}" alt="icone"> 
+                <img class = 'tagIconAdmin' src="${obj[i].icon}" alt="icone"> 
                 <div class = 'vertLine2'></div>
                 <div class = 'unitText'>
                     <h1>${obj[i].title}</h1>
                     <p>${obj[i].url}</p>
                 </div>
-            </div>
+             </div>
+            
             <img data-tag = '${i}' onclick = 'deleteTag(event)' class = 'deletebttn' src="images/deletebox.svg" alt="">
         </div>
         `
@@ -211,7 +212,7 @@ function postTag() {
                 container.innerHTML += `
                 <div class = 'tagUnit fade'>
                     <div class = 'tagUnitPart1'>
-                        <img src="${obj.icon}" alt="icone"> 
+                        <img src="${obj.icon}" class = 'tagIconAdmin' alt="icone"> 
                         <div class = 'vertLine2'></div>
                         <div class = 'unitText'>
                             <h1>${title}</h1>
