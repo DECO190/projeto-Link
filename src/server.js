@@ -69,4 +69,4 @@ app.patch('/countClient/:username', pages.countClient)
 app.patch('/countLinkClick', pages.countLinkClick)
 // ========================================= 
 
-server.listen(5500)
+server.listen(process.env.PORT)
