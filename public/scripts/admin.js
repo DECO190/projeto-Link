@@ -39,7 +39,6 @@ function deleteTag(event) {
                 element.parentNode.classList.remove('fade')
                 
                 let yaa = document.getElementById(`${element.dataset.tag}`)
-                console.log(yaa)
                 yaa.remove()
                 
 
