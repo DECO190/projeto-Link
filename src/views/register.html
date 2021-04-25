@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTER</title>
+    <link rel="sortcut icon" href="/images/link.png" type="image/png" />;
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/scroll.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&family=Waiting+for+the+Sunrise&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class = 'alertBox-container' style='display: none;'>
+        <main>
+            <img src="images/cancel.svg" alt="">
+            <p>Dados inválidos!</p>
+        </main>
+        <div class = 'countLine-container'>
+            <div class = 'countLine'></div>
+        </div>
+    </div>
+
+    <main class="all-container">
+        <aside class="sand-aside">
+            <div class="sand-img">
+                <p class="logoMain" ></p>
+                <h1 class="phraseMain">Compartilhe o que quiser com o mundo</h1>
+                <footer class="footer-menu">
+                    <a href="">Sobre</a>
+                    <a href="">Contato</a>
+                    <a href="">Ajuda</a>
+                    <a href="">Doar</a>
+                </footer>
+            </div>
+        </aside>
+
+        <aside class = 'user-aside'>
+            <div class = 'user-container'>
+                <div  class = 'title-container'>
+                    <h1 class = 'title1' >Use o nosso serviço para espalhar seu trabalho, e mostre ao mundo quem você é!</h1>
+                    <p class = 'title2'>Com a gente você pode divulgar links de sites de forma segura e com urls personalisaveis. Receba relatorios semanais sobre o alcance de sua página...</p>
+                </div>
+                <div class = 'input-container'>
+                    <div class = 'input-unit'>
+                        <img src="images/name.svg" style="margin-top: 10px">
+                        <input type="text" placeholder="Nome..." id = 'name'  autocomplete="off">
+                    </div>
+                    <div class = 'input-unit'>
+                        <img src="images/user.svg">
+                        <input type="text" placeholder="Username..." id = 'username'  autocomplete="off">
+                    </div>
+                    <div class = 'input-unit'>
+                        <img src="images/padlock.svg">
+                        <input type="password" placeholder="Senha..." id = 'password' autocomplete="off">
+                    </div>
+                    
+                    
+                    <div class = 'input-upload-container'>
+                        <p>Foto de perfil: </p>
+                        <input type="file" class = 'image-input' id = 'image' hidden>
+                        <label for = 'image'class = 'overinput'>
+                            <img src="images/upload.svg" alt="">
+                        </label>
+                    </div>
+
+                    <button onclick = 'makeRegister()' class = 'submit-bttn'> <p>Registrar</p> <img style = 'display: none;' src="images/loading.gif" alt=""></button>
+                    <p class = 'noAcount' onclick = 'window.location.href = "/login"' >Já tem uma conta?</p>
+                    
+                </div>
+                
+            
+            </div>
+        </aside>
+    </main>
+
+    <script src="/scripts/register.js"></script>
+
+    <script>
+        document.querySelector('.logoMain').textContent = '</> deco code'
+    </script>
+</body>
+</html>

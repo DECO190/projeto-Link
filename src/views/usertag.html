@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USER</title>
+    <link rel="sortcut icon" href="/images/link.png" type="image/png" />;
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:900" rel="stylesheet">
+    <link rel="stylesheet" href="/css/usertag.css">
+    <link rel="stylesheet" href="/css/animations.css">
+    <link rel="stylesheet" href="/css/scroll.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&family=Waiting+for+the+Sunrise&display=swap" rel="stylesheet">
+    <style>
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar {       
+            background: transparent;
+        }                           
+                                    
+        ::-webkit-scrollbar-thumb { 
+            background: transparent;
+        }                            
+    </style> 
+
+</head>
+<body onload = 'getTags()'>
+    <div class = 'loadingContainer'>
+        <img src="/images/loading.gif" alt="">
+    </div>
+
+    <div id="notfound" class="fade" style="display: none;">
+		<div class="notfound">
+			<div class="notfound-404">
+				<h3>Oops! Página não encontrada</h3>
+				<h1><span>4</span><span>0</span><span>4</span></h1>
+			</div>
+			<h2 class="logoMain">we are sorry, but the page you requested was not found</h2>
+		</div>
+	</div>
+
+    <div class = 'notFoundBack' style="display: none;"></div>
+
+    <div class = 'alertBox-container' style='display: none;'>
+        <main>
+            <img src="/images/cancel.svg" alt="">
+            <p>Dados inválidos!</p>
+        </main>
+        <div class = 'countLine-container'>
+            <div class = 'countLine'></div>
+        </div>
+    </div>
+
+    <main class="all-container" style='display: none;'>
+        <header>
+            <div class = 'userImage'></div>
+            <div class = 'headerText-container'>
+                <div class = 'usernameContainer'>
+                    <p class = 'username'>@AndrePereira190</p>
+                    <img class = 'userQualifyImg verified' src="/images/verified.svg" alt="" style='display: none;'>
+                    <img class = 'userQualifyImg premium' src="/images/vip.svg" alt="" style='display: none;'>
+                </div>
+                <p class = 'userRealname'>Andre Pereira de Oliveira</p>
+            </div>
+        </header>
+
+        <div class = 'tags-container'>
+          
+        </div>
+    </main>
+
+    
+
+    <script src="/scripts/userTag.js"></script>
+
+    <script>
+        document.querySelector('.logoMain').textContent = '</> deco code'
+    </script>
+</body>
+</html>

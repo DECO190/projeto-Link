@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ADM</title>
+        <link rel="sortcut icon" href="/images/link.png" type="image/png" />;
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+        <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+        <link rel="stylesheet" href="css/admin.css">
+        <link rel="stylesheet" href="css/animations.css">
+        <link rel="stylesheet" href="css/scroll.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&family=Waiting+for+the+Sunrise&display=swap" rel="stylesheet">
+    </head>
+<body onload = 'checkUser()'>
+    <div class = 'loadingContainer' >
+        <img src="images/loading.gif" alt="">
+    </div>
+
+    <div class = 'alertBox-container' style='display: none;'>
+        <main>
+            <img src="images/cancel.svg" alt="">
+            <p></p>
+        </main>
+        <div class = 'countLine-container'>
+            <div class = 'countLine'></div>
+        </div>
+    </div>
+
+    <main class="all-container" style="display: flex;">
+
+        <div class = 'content-container'>
+            <header>
+                <p class= 'logoMain'></p>
+                <div class = 'menu-container'>
+                    <p onclick = 'changeMenu(event)' class = 'menu-unit's>Perfil</p>
+                    <div class = 'linhaVert'></div>
+                    <p onclick = 'changeMenu(event)' class = 'menu-unit activeMenu'>Tags</p>
+                    <div class = 'linhaVert'></div>
+                    <p onclick = 'changeMenu(event)' class = 'menu-unit'>Analise</p>
+                </div>
+            </header>
+            <div class = 'menuSection-container tags' >
+                <div class = 'postNewTag-container'>
+                    <div class = 'newTagInput-container'>
+                        <input type="file" id = 'iconInput' hidden> 
+                        <label for="iconInput">
+                            <img src="images/upload.svg" alt="">
+                            <p>Icone</p>
+                        </label>
+                        <input class = 'tagInput' placeholder = 'Titulo...' type="text" id="tagTitle">
+                    </div>
+                    <input type="text" class = 'tagInput' id = 'tagUrl' placeholder="URL da tag...">
+                    <button class = 'addBttn' onclick = 'postTag()'> <p>Adicionar Tag!</p> <img style = 'display: none;' src="images/loading.gif" alt=""></button>
+                </div>
+            
+                <div class = 'tags-container'></div>
+            </div>
+
+            <div class = 'menuSection-container analise' style="display: none;">
+                <div class="ct-chart ct-perfect-fourth"></div>
+                <div class = 'tagsAnaliseContainer'></div>
+            </div>
+
+            <div class = 'menuSection-container perfil' style="display: none;">
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        document.querySelector('.logoMain').textContent = '</> deco code'
+    </script>
+
+    <script src="/scripts/admin.js"></script>
+
+
+    <script src="/scripts/qrcode.min.js">
+
+    </script>
+
+  
+
+</body>
+</html>

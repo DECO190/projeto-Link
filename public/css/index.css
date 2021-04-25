@@ -1,0 +1,167 @@
+* {
+    padding: 0;
+    width: 0;
+    margin: 0px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    min-height: 600px;
+}
+
+.bgImg {
+    width: 101vw;
+    height: 100vh;
+    position: absolute;
+    background-image: url('/images/sand.png');
+    background-position: center;
+    background-size: cover;
+    filter: blur(1.5px);
+    min-height: 400px;
+    background-repeat: no-repeat;
+    min-height: 700px;
+}
+
+.bgImg2 {
+    width: 101vw;
+    height: 100vh;
+    position: absolute;
+    background-image: url('/images/sand.png');
+    background-position: center;
+    background-size: cover;
+    z-index: -10;
+    min-height: 400px;
+    background-repeat: no-repeat;
+    min-height: 700px;
+}
+
+/* =================================================== */
+
+main {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    justify-content: center;
+    z-index: 10;
+    display: flex;
+    max-width: 1200px;
+    overflow-x: hidden;
+    min-height: 700px;
+}
+
+.cellSide-container {
+    height: 100%;
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;    
+
+}
+
+.cellSide-container img {
+    width: 287px;
+    height: 564px;
+}
+
+/* ===================================================== */
+
+.textSide-container {
+    width: 55%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+.textSide-container h1 {
+    font-size: 45px;
+    color: white;
+    font-family: 'Waiting for the Sunrise', sans-serif;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.textSide-container p {
+    font-family: 'Sen', sans-serif;
+    width: 80%;
+    max-width: 800px;
+    font-size: 16px;
+    line-height: 25px;
+    color: rgba(255, 255, 255, 0.705);
+    margin-top: 10px;
+}
+
+.textSide-container img {
+    height: 100px;
+    width: 100px;
+    margin-top: 20px;
+    
+}
+
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button-container button {
+    color: white;
+    width: 200px;
+    height: 60px;
+    outline: none;
+    border: none;
+    margin: 0px 20px;
+    border-radius: 15px;
+    font-family: 'Sen', sans-serif;
+    cursor: pointer;
+    transition: width, height, 500ms;
+}
+
+#registerBttn {
+    background-color: rgba(255, 255, 255, 0.26);
+    font-size: 18px;
+}
+
+#loginBttn {
+    background-color: transparent;
+    border: solid 5px rgba(255, 255, 255, 0.26);
+    font-size: 18px;
+}
+
+.button-container button:hover {
+    width: 35%;
+    height: 65px;
+}
+
+@media (max-width: 750px) {
+    main {
+        flex-direction: column;
+        justify-content: start;
+    }
+    
+    .textSide-container {
+        width: 100%;
+        justify-content: baseline;
+        min-height: 900px;
+    }
+    
+    .textSide-container p {
+        width: 95%;
+    }
+
+    .cellSide-container {
+        width: 100%;
+        min-height: 600px !important;
+        margin-top: 10px;
+    }
+}
